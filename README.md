@@ -1,15 +1,18 @@
-#ENS 160 for ESPHome Custom Component
-https://dfimg.dfrobot.com/store/data/SEN0515/SEN0515.jpg
-Added Features:
+#ENS160 for ESPHome Custom Component
+![ens160 modul](https://dfimg.dfrobot.com/store/data/SEN0515/SEN0515.jpg)
 
-- Sleep / Idle / Measure (for managing current consumption: 10µA / 2.5mA / 30mA)
-  selectable via a select template*
+*Added Features:
 
-- Status function: initialize / warm up / normal
+Sleep / Idle / Measure (for managing current consumption: 10 µA / 2.5 mA / 30 mA)
+Selection via select template
 
-*Note: I added this function in two ways. One is via a template select, which works without issues. The other can be added directly to the ENS160 component, but it causes a restart. I haven’t been able to fix it, but I’m leaving it in the code in case someone is interested in completing it.
+Status Function: initialize / warm-up / normal — a debug feature that bypasses the 3-minute warm-up time to start sending data immediately. Recommended only for testing the sensor at startup.
 
-YAML:
+* Note: I added this feature in two ways. One is via the template select, which works without issues. The other can be added directly to the ENS160 component, but it causes restarts. I haven’t been able to fix this, but I left it in the code in case someone wants to finish it.
+
+Important Note: This sensor is sensitive to undervoltage. If you don’t provide a proper 3.3 V supply with sufficient current, the sensor won’t start and will report normal start bad not reading. Therefore, I recommend either adding a capacitor between the 1.8 V LDO output and GND or ensuring stable power supply.
+
+*YAML:
 ```
 #-------------------------------------------
 # EXTERNAL COMPONENT

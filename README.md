@@ -1,4 +1,5 @@
-#ENS160 for ESPHome Custom Component
+***ENS160 for ESPHome Custom Component***
+
 ![ens160 modul](https://dfimg.dfrobot.com/store/data/SEN0515/SEN0515.jpg)
 
 *Added Features:
@@ -12,6 +13,8 @@ Selection via select template
 * Note: I added this feature in two ways. One is via the template select, which works without issues. The other can be added directly to the ENS160 component, but it causes restarts. I haven’t been able to fix this, but I left it in the code in case someone wants to finish it.
 
 Important Note: This sensor is sensitive to undervoltage. If you don’t provide a proper 3.3 V supply with sufficient current, the sensor won’t start and will report normal start bad not reading. Therefore, I recommend either adding a capacitor between the 1.8 V LDO output and GND or ensuring stable power supply (47uF).
+
+Anyway, I accidentally fried this sensor, so further testing is not possible at the moment.
 
 *YAML:
 ```
